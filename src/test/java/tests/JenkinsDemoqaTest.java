@@ -12,6 +12,7 @@ public class JenkinsDemoqaTest extends TestBase {
     @Test
     @Tag("demoqa")
     void registrationDemoqaTest() {
+
         step("Open form", () -> {
             open("/");
             executeJavaScript("$('#fixedban').remove()");
