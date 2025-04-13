@@ -30,6 +30,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         System.out.println("=== Параметры запуска ===");
+        System.out.println("browser: " + System.getProperty("browser"));
         System.out.println("remoteUrl: " + remoteUrl());
 
     }
