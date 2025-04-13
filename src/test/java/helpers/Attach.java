@@ -1,7 +1,6 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
-import config.CredentialsConfig;
 import io.qameta.allure.Attachment;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.OutputType;
@@ -36,23 +35,5 @@ public class Attach {
                 "Browser console logs",
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))
         );
-    }
-
-    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String addVideo() {
-        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + getVideoUrl()
-                + "' type='video/mp4'></video></body></html>";
-    }
-
-    public static URL getVideoUrl() {
-        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-        String videoUrl = "https://" + config.remoteUrl() + "/video/" + sessionId() + ".mp4";
-        try {
-            return new URL(videoUrl);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }
