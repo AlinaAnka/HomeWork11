@@ -16,7 +16,7 @@ public class TestBase {
     @BeforeAll
     static void setupConfig() {
         Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browser_version");
+        Configuration.browserVersion = System.getProperty("browser_version" );
         Configuration.browserSize = System.getProperty("screen_resolution");
         Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
         Configuration.pageLoadStrategy = "eager";
@@ -31,6 +31,8 @@ public class TestBase {
 
         System.out.println("=== Параметры запуска ===");
         System.out.println("browser: " + System.getProperty("browser"));
+        System.out.println("browser_version: " + System.getProperty("browser_version"));
+        System.out.println("screen_resolution: " + System.getProperty("screen_resolution"));
         System.out.println("remoteUrl: " + remoteUrl());
 
     }
