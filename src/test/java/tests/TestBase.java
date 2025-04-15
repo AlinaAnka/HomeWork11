@@ -15,9 +15,9 @@ public class TestBase {
 
     @BeforeAll
     static void setupConfig() {
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browser_version" );
-        Configuration.browserSize = System.getProperty("screen_resolution");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browser_version", "100.0" );
+        Configuration.browserSize = System.getProperty("screen_resolution", "1920x1080");
         Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
