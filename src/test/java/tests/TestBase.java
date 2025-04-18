@@ -30,10 +30,10 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         System.out.println("=== Параметры запуска ===");
-        System.out.println("Remote URL: " + Configuration.remote.replaceAll("1234", "****"));
-        System.out.println("Browser: " + Configuration.browser);
-        System.out.println("Version: " + Configuration.browserVersion);
-        System.out.println("Resolution: " + Configuration.browserSize);
+        System.out.println("browser: " + System.getProperty("browser", "chrome"));
+        System.out.println("browser_version: " + System.getProperty("browser_version", "100.0"));
+        System.out.println("screen_resolution: " + System.getProperty("screen_resolution", "1920x1080"));
+        System.out.println("remoteUrl: " + remoteUrl());
     }
 
     @BeforeEach
