@@ -16,7 +16,7 @@ public class TestBase {
     @BeforeAll
     static void setupConfig() {
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browser_version", "100.0");
+        Configuration.browserVersion = System.getProperty("browser_version", "122.0");
         Configuration.browserSize = System.getProperty("screen_resolution", "1920x1080");
         Configuration.remote = System.getProperty("remoteUrl");
         Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
@@ -54,6 +54,6 @@ public class TestBase {
         return "https://"
                 + System.getProperty("selenoidUser", "user1") + ":"
                 + System.getProperty("selenoidPassword", "1234") + "@"
-                + System.getProperty("selenoid_url", "selenoid.autotests.cloud");
+                + System.getProperty("selenoid_url", "selenoid.autotests.cloud:4444/wd/hub");
     }
 }
