@@ -21,7 +21,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
-//        Configuration.remote = remoteUrl();
+        Configuration.remote = remoteUrl();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -55,6 +55,6 @@ public class TestBase {
         return "https://"
                 + System.getProperty("selenoidUser", "user1") + ":"
                 + System.getProperty("selenoidPassword", "1234") + "@"
-                + System.getProperty("selenoid_url", "selenoid.autotests.cloud/");
+                + System.getProperty("selenoid_url", "selenoid.autotests.cloud/wd/hub");
     }
 }
