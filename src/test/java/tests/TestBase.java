@@ -18,7 +18,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
         Configuration.browserSize = System.getProperty("screen_resolution", "1920x1080");
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("remoteUrl");
         Configuration.baseUrl = "https://demoqa.com/automation-practice-form";
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
@@ -34,7 +34,6 @@ public class TestBase {
         System.out.println("browser_version: " + System.getProperty("browser_version", "100.0"));
         System.out.println("screen_resolution: " + System.getProperty("screen_resolution", "1920x1080"));
         System.out.println("remoteUrl: " + remoteUrl());
-        System.out.println("remoteUrl2: " + System.getProperty("remoteUrl"));
     }
 
     @BeforeEach
