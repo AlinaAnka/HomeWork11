@@ -30,10 +30,10 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         System.out.println("=== Параметры запуска ===");
-        System.out.println("browser: " + System.getProperty("browser", "chrome"));
-        System.out.println("browser_version: " + System.getProperty("browser_version", "100.0"));
-        System.out.println("screen_resolution: " + System.getProperty("screen_resolution", "1920x1080"));
-        System.out.println("remoteUrl: " + remoteUrl());
+        System.out.println("Remote URL: " + Configuration.remote.replaceAll("1234", "****"));
+        System.out.println("Browser: " + Configuration.browser);
+        System.out.println("Version: " + Configuration.browserVersion);
+        System.out.println("Resolution: " + Configuration.browserSize);
     }
 
     @BeforeEach
@@ -49,11 +49,11 @@ public class TestBase {
         Attach.addVideo();
 
     }
-
-    static private String remoteUrl() {
-        return "https://"
-                + System.getProperty("selenoidUser", "user1") + ":"
-                + System.getProperty("selenoidPassword", "1234") + "@"
-                + System.getProperty("selenoid_url", "selenoid.autotests.cloud:4444/wd/hub");
+    private static String remoteUrl() {
+        return "https://" +
+                System.getProperty("selenoidUser", "user1") + ":" +
+                System.getProperty("selenoidPassword", "1234") + "@" +
+                System.getProperty("selenoid_url", "selenoid.autotests.cloud") +
+                ":4444/wd/hub";
     }
 }
